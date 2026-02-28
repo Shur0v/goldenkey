@@ -17,7 +17,11 @@ import {
   X,
   ArrowRight,
   CheckCircle2,
-  MessageCircle
+  MessageCircle,
+  Facebook,
+  Instagram,
+  Twitter,
+  Linkedin
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -28,7 +32,7 @@ const FEATURED_CARS = [
     name: 'Range Rover Sport',
     category: 'Luxury SUV',
     price: 1200,
-    image: 'https://picsum.photos/seed/rr-sport-2024/800/600',
+    image: 'https://plus.unsplash.com/premium_photo-1736166042797-6009deac10b4?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bW9kZXJuJTIwY2FyfGVufDB8fDB8fHww',
     specs: { transmission: 'Auto', seats: 5, fuel: 'Petrol' },
     rating: 4.9,
     reviews: 124
@@ -38,7 +42,7 @@ const FEATURED_CARS = [
     name: 'Mercedes G63 AMG',
     category: 'Super Luxury',
     price: 2500,
-    image: 'https://picsum.photos/seed/g63-amg-black/800/600',
+    image: 'https://plus.unsplash.com/premium_photo-1737405816020-4217919dffc8?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     specs: { transmission: 'Auto', seats: 5, fuel: 'Petrol' },
     rating: 5.0,
     reviews: 89
@@ -48,7 +52,7 @@ const FEATURED_CARS = [
     name: 'Tesla Model Y',
     category: 'Electric',
     price: 450,
-    image: 'https://picsum.photos/seed/tesla-white-2024/800/600',
+    image: 'https://img.freepik.com/free-photo/futuristic-sports-car_23-2151955599.jpg?semt=ais_user_personalization&w=740&q=80',
     specs: { transmission: 'Auto', seats: 5, fuel: 'Electric' },
     rating: 4.8,
     reviews: 210
@@ -56,10 +60,10 @@ const FEATURED_CARS = [
 ];
 
 const CATEGORIES = [
-  { name: 'Luxury', image: 'https://picsum.photos/seed/luxury-car-interior/600/400', count: 12 },
-  { name: 'SUVs', image: 'https://picsum.photos/seed/suv-desert/600/400', count: 24 },
-  { name: 'Sports', image: 'https://picsum.photos/seed/sports-car-track/600/400', count: 8 },
-  { name: 'Electric', image: 'https://picsum.photos/seed/ev-charging/600/400', count: 15 },
+  { name: 'Luxury', image: 'https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iuTHf0PV6ZoM/v1/-1x-1.webp', count: 12 },
+  { name: 'SUVs', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Et-yMxXRq0h8w6vuSEws4bPG-ljvnDw8lA&s', count: 24 },
+  { name: 'Sports', image: 'https://d1iweu5ycuvvev.cloudfront.net/powernationtv-com/media/uploads/2022/08/529100_v3-1024x576.jpg', count: 8 },
+  { name: 'Electric', image: 'https://cdn.images.express.co.uk/img/dynamic/24/590x/Mercedes-F015-566807.jpg?r=1686998680160', count: 15 },
 ];
 
 const TESTIMONIALS = [
@@ -180,7 +184,7 @@ const Hero = ({ isArabic }: { isArabic: boolean }) => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="https://picsum.photos/seed/dubai-luxury-car/1920/1080" 
+          src="https://t4.ftcdn.net/jpg/06/61/31/83/360_F_661318319_P5z8p33YDqTMyCCQCvimkJT08bcxFtWv.jpg" 
           alt="Luxury Car in Dubai" 
           fill 
           className="object-cover brightness-[0.4]"
@@ -685,9 +689,14 @@ export default function LandingPage() {
                 The premier car rental service in the UAE. Redefining luxury, reliability, and excellence in every mile since 2010.
               </p>
               <div className="flex gap-4">
-                {['FB', 'IG', 'TW', 'LI'].map(s => (
-                  <div key={s} className="w-12 h-12 bg-white/5 hover:bg-amber-500 hover:text-white text-white/40 rounded-2xl flex items-center justify-center transition-all cursor-pointer font-bold text-xs">
-                    {s}
+                {[
+                  { icon: Facebook, name: 'Facebook' },
+                  { icon: Instagram, name: 'Instagram' },
+                  { icon: Twitter, name: 'Twitter' },
+                  { icon: Linkedin, name: 'Linkedin' }
+                ].map(s => (
+                  <div key={s.name} className="w-12 h-12 bg-white/5 hover:bg-amber-500 hover:text-white text-white/40 rounded-2xl flex items-center justify-center transition-all cursor-pointer group">
+                    <s.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
                   </div>
                 ))}
               </div>
