@@ -1,0 +1,7 @@
+{
+  "name": "Golden Key Car Rental",
+  "description": "Enterprise-level car rental booking platform with bilingual support, advanced admin panel, and real-time booking management.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
